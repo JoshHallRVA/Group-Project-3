@@ -1,2 +1,8 @@
-# Group-Project-2
-studious-guacamole
+# GROUP PROJECT 2
+
+
+## Welcome to our group project!
+
+
+![Group](Capture.PNG)
+
