@@ -4,5 +4,5 @@
 ## Welcome to our group project!
 
 
-![Group](Capture.PNG)
+![Group](https://github.com/watkins656/Group-Project-2/blob/frontend/michael/public/img/Capture.PNG?raw=true)
 
