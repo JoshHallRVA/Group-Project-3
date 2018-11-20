@@ -27,20 +27,20 @@ li {
   }
   
   h1 {
-    font-family: "Rock Salt", cursive;
+    font-family: 'Josefin Slab', serif;
     font-weight: bold;
     text-align: center;
-    color: #ff0099;
+    color: white;
     margin-bottom: 25px;
     margin-top: 50px;
     /* text-shadow: 2px 2px #ffffff; */
   }
   
   h2 {
-    font-family: "Rock Salt", cursive;
+    font-family: 'Josefin Slab', serif;
     text-align: center;
     /* text-shadow: 2px 2px #ffffff; */
-    color: #6e0dd0;
+    color: white;
   }
   
   .create-update-form {
@@ -106,8 +106,8 @@ li {
     height: 100%;
     width: 100%;
      background:   linear-gradient(
-       rgba(26, 25, 25, 0.801), 
-       rgba(26, 25, 25, 0.801)
+       rgba(26, 25, 25, 0.501), 
+       rgba(26, 25, 25, 0.501)
      ), url("../img/treasure.jpg") no-repeat center center fixed; 
      -webkit-background-size: cover;
      -moz-background-size: cover;
