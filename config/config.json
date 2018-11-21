@@ -1,23 +1,21 @@
 {
   "development": {
-    "username": "root",
-    "password": "computer",
-    "database": "a3t7g6zh8ynzwgit",
+    "username": "mjbenefiel",
+    "password": "dur@cell15",
+    "database": "exampledb",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "computer",
-    "database": "a3t7g6zh8ynzwgit",
+    "password": null,
+    "database": "testdb",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "logging": false
   },
   "production": {
-    "username": "root",
-    "password": "computer",
-    "database": "a3t7g6zh8ynzwgit",
-    "host": "localhost",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
