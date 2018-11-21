@@ -15,7 +15,7 @@ app.use(express.static("public"));
 // Handlebars
 app.engine(
   "handlebars",
-  exphbs({
+  exphbs({ 
     defaultLayout: "main"
   })
 );
