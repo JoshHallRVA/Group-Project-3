@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
   let wishList = sequelize.define("wishList", {
-    item: DataTypes.STRING,
-    created_at: DataTypes.DATE
+    buyerId: DataTypes.INTEGER,
+    itemId: DataTypes.INTEGER,
   });
   return wishList;
 };

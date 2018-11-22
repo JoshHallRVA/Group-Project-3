@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "mjbenefiel",
-    "password": "dur@cell15",
-    "database": "exampledb",
+    "username": "root",
+    "password": "computer",
+    "database": "a3t7g6zh8ynzwgit",
     "host": "localhost",
     "dialect": "mysql"
   },
