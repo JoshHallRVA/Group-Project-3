@@ -4,7 +4,25 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
+      res.render("homepage", {
+        msg: "LOGO",
+        examples: dbExamples
+      });
+    });
+  });
+
+   app.get("/leftover", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("leftover", {
+        msg: "LOGO",
+        examples: dbExamples
+      });
+    });
+  });
+
+     app.get("/buyer", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("buyer", {
         msg: "LOGO",
         examples: dbExamples
       });
