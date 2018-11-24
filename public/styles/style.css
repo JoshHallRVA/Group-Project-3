@@ -158,7 +158,7 @@ hr {
   font-size: 16px;
   line-height: 26px;
   border-radius: 2px;
-  background-color: #03a9f4; /*brand primary color*/
+  background-color: #1213134d; /*brand primary color*/
   border: 0;
 }
 
@@ -176,7 +176,7 @@ hr {
 }
 
 .btn:hover {
-  background-color: #03a9f4;
+  background-color: #03a8f46c;
 }
 
 .btn.active,
@@ -2292,7 +2292,7 @@ overflow: visible;
   font: bold 15px/40px 'Raleway', Arial, Helvetica;
   color: #fff;
   text-transform: uppercase;
-  background: #d83c3c;
+  background: #03a9f4;
   -moz-border-radius: 0 3px 3px 0;
   -webkit-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;      
@@ -2300,12 +2300,12 @@ overflow: visible;
 }   
 
 .form-wrapper button:hover{		
-  background: #e54040;
+  background: #0cb2ff;
 }	
 
 .form-wrapper button:active,
 .form-wrapper button:focus{   
-  background: #c42f2f;    
+  background: #03a9f4;    
 }
 
 .form-wrapper button:before {
@@ -2313,17 +2313,17 @@ overflow: visible;
   position: absolute;
   border-width: 8px 8px 8px 0;
   border-style: solid solid solid none;
-  border-color: transparent #d83c3c transparent;
+  border-color: transparent #03a9f4 transparent;
   top: 12px;
   left: -6px;
 }
 
 .form-wrapper button:hover:before{
-  border-right-color: #e54040;
+  border-right-color: #03a9f4;
 }
 
 .form-wrapper button:focus:before{
-  border-right-color: #c42f2f;
+  border-right-color: #0cb2ff;
 }    
 
 .form-wrapper button::-moz-focus-inner {
@@ -2338,6 +2338,6 @@ text-shadow: 0 2px 3px rgba(0,0,0,0.1);
 }
 
 .byline p a{
-color:#d83c3c;
+color:#0cb2ff;
 text-decoration:none;
 }
