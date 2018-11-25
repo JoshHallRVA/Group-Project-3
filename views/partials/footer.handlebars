@@ -114,6 +114,48 @@
     });
 </script>
 
+   <script type="text/javascript">
+    $(document).on("click", ".show-user-modal", function (e) {
+        e.preventDefault();
+        $("#ask-username").addClass("is-active");
+    });
+    $(".user-modal-close").click(function (e) {
+        e.preventDefault();
+        $("#ask-username").removeClass("is-active");
+    });
+
+</script>
+
+<script type="text/javascript">
+$("#submit-user").click(function (e) {
+    e.preventDefault();
+
+    if ($("#enter-username").val() !== "") {
+        var username = $("#enter-username").val().trim()
+      
+     
+        $("#username").text(username);
+        console.log(username);
+        $("#ask-username").removeClass("is-active");
+
+        
+
+    } else {
+        return false;
+    }
+
+});
+
+$("#cancel-user").click(function () {
+
+    $("#ask-username").removeClass("is-active");
+});
+
+$(".username-modal-close").on("click", function () {
+    $("#alert-username").removeClass("is-active")
+});
+</script>
+
 <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems! The following part can be removed on Server for On Demand Loading) -->
 
 <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
