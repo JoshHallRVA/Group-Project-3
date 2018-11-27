@@ -2427,7 +2427,7 @@ text-decoration:none;
 
 body {
 /*   background: #EEE; */
-  	background: url("https://s16.postimg.org/4d17gd0vp/smbg.png");
+  	/* background: url("https://s16.postimg.org/4d17gd0vp/smbg.png"); */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -2539,3 +2539,6 @@ h3 {
 }
 
 /* LOGIN */
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/****** LOGIN MODAL ******/
