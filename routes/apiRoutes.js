@@ -22,7 +22,6 @@ module.exports = function (app) {
       res.json(dbBuyer);
     });
   });
-};
 
 // Create a new example
   app.post("/api/seller", function (req, res) {
@@ -69,4 +68,4 @@ module.exports = function (app) {
             res.json(dbBuyer);
       });
       });
-      
+    };
