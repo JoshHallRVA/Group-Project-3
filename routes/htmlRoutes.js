@@ -63,6 +63,14 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/leftover", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("leftover", {
+        msg: "LOGO",
+        examples: dbExamples
+      });
+    });
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {

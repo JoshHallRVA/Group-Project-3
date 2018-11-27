@@ -18,7 +18,7 @@ var sequelize = new Sequelize('mysql://o97q01adng4et30o:rxyfvrff8pusf5tg@bbj31ma
     min: 0,
     idle: 10000
   }
-});
+};
 
 // Exports the connection for other files to use
 module.exports = sequelize;
