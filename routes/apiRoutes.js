@@ -24,43 +24,10 @@ module.exports = function (app) {
   });
 };
 
-  // Create a new example
+// Create a new example
   app.post("/api/seller", function (req, res) {
-    db.seller.create(req.body).then(function (dbSeller) {
-      res.json(dbSeller);
-      let db = require("../models");
-
-  
-       module.exports = function (app) {
-        // Get all examples
-        app.get("/api/:seller", function (req, res) {
-          db.seller.findAll({ where: { id: req.params.seller } }).then(function (dbSeller) {
-            res.json(dbSeller);
-          });
-        });
-        app.get("/api/:seller/items", function (req, res) {
-          db.items.findAll({ where: { sellerId: req.params.seller } }).then(function (dbItems) {
-            res.json(dbItems);
-          });
-        });
-        app.get("/api/:seller/address", function (req, res) {
-          db.address.findAll({ where: { sellerId: req.params.seller } }).then(function (dbAddress) {
-            res.json(dbAddress);
-          });
-        });
-        app.get("/api/:buyer/booty", function (req, res) {
-          db.wishList.findAll({ where: { buyerId: req.params.buyer } }).then(function (dbBuyer) {
-            res.json(dbBuyer);
-          });
-        });
-      };
-    });
-  });
-      
-        // Create a new example
-        app.post("/api/seller", function (req, res) {
-          db.seller.create(req.body).then(function (dbSeller) {
-            res.json(dbSeller);
+     db.seller.create(req.body).then(function (dbSeller) {
+        res.json(dbSeller);
           });
         });
         app.post("/api/:seller/items", function (req, res) {
