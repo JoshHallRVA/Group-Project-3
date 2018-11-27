@@ -1,0 +1,127 @@
+Homepage ('/')
+
+Add Logo
+
+"Ahoy"
+
+Add empty Div as a placeholder for iceboxed idea: Search by location
+
+Add Buyer and Seller Buttons ("/buyer", "/seller")
+
+Add Copyright footer - Add github portfolio links
+
+Style similar to zillow or letgo
+
+==============================================================
+
+Buyer Page ("/buyer")
+
+Jumbotron Header - Prompt that says "Buyer Page" 
+
+Add a drop-down selection input that allows user to filter by radius for Sales to show (e.g. 25 mi, 50 mi, 100 mi)
+
+Use Handlebars Partials to create individual (tiles?) for sales
+
+Look in my Treasure Chest button that displays all the selected Garage sales and addresses/locations
+
+Set Sail button Icebox: that launches the WhatToDo app
+
+==============================================================
+
+
+Buyer View Partial (what the buyer sees displayed) uses /api seller and items joined table to display proper info 
+Each sale displays the following:
+
+Image (primary)
+Location - MVP will show City, Zip (optimal: as distance from current location)
+Count of total items for sale
+Range of prices of items for sale
+"I'm Interested" Button - clicking this opens modal with featured items
+"Add to Pirate Booty list"  - allows the user to build a list of garage sales they want to hit
+
+
+==============================================================
+
+Buyer Page Modal uses /api seller and items joined table to display proper info
+
+Displays featured items (Top 3)
+Contact info if available 
+Icebox: Go now button (takes them straight to directions)
+
+==================================================================
+
+
+Seller Page ("/seller")
+
+Jumbotron Header - Prompt that says "Seller Page" 
+
+Form that allows user to input:
+	-Address (required)
+	-Contact info (optional)
+	-Toggle button for "Is ok to contact me?"
+	-Date/time (required)
+	-Image (required)
+submit button takes user to items portfolio page
+
+Item portfolio page ("/:seller/items")
+Items Form:
+	-Name
+	-Description
+	-Price
+	-Photo
+	-Category
+	-Top 3/Featured 
+	-Drag and drop ordering of items
+	-Cover photo option checkbox
+Submit button: "Thank you for sharing your Duffle" screen - button that pushes their portfolio to the DB
+"What's next?" Modal - displays options such as:
+	-Back to home screen option
+	-buy garage sale supplies
+	-shoot a cannon
+	-
+
+
+
+
+
+
+Error Messages: "Blimey!  You can't do that Matey!"
+
+
+
+
+Routes
+
+Html:
+	"/"
+	"/buyer"
+	"/seller"
+	"/seller/items"
+	"/buyer/booty"
+
+API/:
+	":seller"
+	":seller/:item"
+	":buyer/:booty"
+
+
+Models:
+	Buyer: Push a seller's info into their treasure chest
+			Get the entire treasure chest
+			Delete seller's from treasure chest
+	Seller: Push seller info into Seller table
+			Edit seller info
+	Items: Push items into item table with respective seller ID as foreign key
+			Get all items
+			Get individual items
+			Edit individual items
+			Delete/destroy items 
+
+controller: 
+link all routes to appropriate models
+
+
+Schemas/Seeds:
+Seller table:
+Items table:
+BuyerWishlist table: Icebox: create unique tables using buyerId

@@ -1,17 +1,69 @@
-var db = require("../models");
+let db = require("../models");
 
-module.exports = function(app) {
+
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("homepage", {
+  app.get("/", function (req, res) {
+    db.Example.findAll({}).then(function (dbExamples) {
+      res.render("index", {
         msg: "LOGO",
         examples: dbExamples
       });
     });
   });
 
-   app.get("/leftover", function(req, res) {
+  // Load example page and pass in an example by id
+  app.get("/buyer", function (req, res) {
+    db.items.findAll({}).then(function (allItems) {
+      res.render("buyer", {
+        items: allItems
+      });
+    });
+  });
+  
+  app.get("/:buyer/booty", function (req, res) {
+    db.wishList.findAll({ where: { id: req.params.buyer }} ).then(function (allItems) {
+      res.render("booty", {
+        items: allItems
+      });
+    });
+  });
+  app.get("/buyer/booty", function (req, res) {
+    db.wishList.findAll({}).then(function (allItems) {
+      res.render("booty", {
+        items: allItems
+      });
+    });
+  });
+
+
+  app.get("/seller", function (req, res) {
+    db.items.findAll({}).then(function (dbItems) {
+      res.render("seller", {
+        msg: "Welcome!",
+        examples: dbItems
+      });
+    });
+  });
+
+  app.get("/:seller/items", function (req, res) {
+    db.items.findAll({where: { id: req.params.seller }}).then(function (sellerItems) {
+      
+      res.render("items", {
+        items: sellerItems
+      });
+    });
+  });
+  app.get("/seller/items", function (req, res) {
+    db.items.findAll({}).then(function (sellerItems) {
+      
+      res.render("items", {
+        items: sellerItems
+      });
+    });
+  });
+
+  app.get("/leftover", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("leftover", {
         msg: "LOGO",
@@ -20,37 +72,10 @@ module.exports = function(app) {
     });
   });
 
-     app.get("/buyer", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("buyer", {
-        msg: "LOGO",
-        examples: dbExamples
-      });
-    });
-  });
-
-       app.get("/seller", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("seller", {
-        msg: "LOGO",
-        examples: dbExamples
-      });
-    });
-  });
-
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
-
   
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };
