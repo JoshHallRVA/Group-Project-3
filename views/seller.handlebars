@@ -57,9 +57,66 @@
             <textarea name="message" id="message" class="materialize-textarea"></textarea>
             <label for="message">Message</label>
           </div>
+{{!-- MODAL --}}
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="submit-button">Open Modal</button>
+        <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+ 
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Thank you for submitting your information</h4>
+          </div>
+          <div class="modal-body">
+          {{!-- PRACTICE --}}
 
-          <button id="submit-button" name="submit" class="waves-effect waves-light btn pink left mt-30">Submit
-            Information</button>
+          <div class="panel panel-default">
+  <div class="panel-heading">Please enter the items you'd like to sell</div>
+  {{!-- <div class="panel-heading">Education Experience</div> --}}
+  <div class="panel-body">
+  
+  <div id="education_fields">
+          
+        </div>
+       <div class="col-sm-3 nopadding">
+  <div class="form-group">
+    <input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="Item name">
+  </div>
+</div>
+<div class="col-sm-3 nopadding">
+  <div class="form-group">
+    <input type="text" class="form-control" id="Major" name="Major[]" value="" placeholder="Item price">
+     
+  </div>
+  <div class="input-group-btn">
+        <button class="btn btn-success" type="button"  onclick="education_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+      </div>
+</div>
+
+
+<div class="clear"></div>
+  
+  </div>
+
+</div>
+
+          {{!-- PRACTICE --}}
+          
+          
+          
+          
+          
+          
+                    </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+{{!-- MODAL --}}
         </form>
       </div>
       <script src="https://code.jquery.com/jquery.js"></script>
@@ -75,8 +132,6 @@ alert("Adding New Seller")
             dates: $("#dates").val().trim(),
             message: $("#message").val().trim()
           };
-
-
           $.post("/api/seller", newSeller)
             .then(function (data) {
               console.log("add.html", data);
@@ -84,28 +139,40 @@ alert("Adding New Seller")
         });
       </script>
 
+<script type="text/javascript">
+      var room = 1;
+function education_fields() {
+ 
+    room++;
+    var objTo = document.getElementById('education_fields')
+    var divtest = document.createElement("div");
+	divtest.setAttribute("class", "form-group removeclass"+room);
+	var rdiv = 'removeclass'+room;
+    divtest.innerHTML = '<div class="col-sm-3 nopadding"><div class="form-group"> <input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="Item name"></div></div><div class="col-sm-3 nopadding"><div class="form-group"> <input type="text" class="form-control" id="Major" name="Major[]" value="" placeholder="Item price"></div></div><div class="input-group-btn"> <button class="btn btn-danger" type="button" onclick="remove_education_fields('+ room +');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> </button></div></div></div></div><div class="clear"></div>';
+    
+    objTo.appendChild(divtest)
+}
+   function remove_education_fields(rid) {
+	   $('.removeclass'+rid).remove();
+   }
+</script>
       <!-- /.col-md-8 -->
 
       {{!-- <div class="col-md-4 contact-info">
-
         <address>
           <i class="material-icons brand-color">&#xE8B4;</i>
           <div class="address">
             1355 Market Street, Suite 900<br>
             San Francisco, CA 94103
-
             <hr>
-
             <p>Hoffman Parkway, P.O Box 154 Mountain View.<br>
               United States of America.</p>
           </div>
-
           <i class="material-icons brand-color">&#xE61C;</i>
           <div class="phone">
             <p>Fax: (123) 456-7890<br>
               Phone: (123) 456-7890</p>
           </div>
-
           <i class="material-icons brand-color">&#xE0B7;</i>
           <div class="mail">
             <p><a href="mailto:#">first.last@example.com</a><br>
