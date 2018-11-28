@@ -57,66 +57,78 @@
             <textarea name="message" id="message" class="materialize-textarea"></textarea>
             <label for="message">Message</label>
           </div>
-{{!-- MODAL --}}
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="submit-button">Open Modal</button>
-        <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
- 
-        <!-- Modal content-->
+          {{!-- MODAL --}}
+        
+
+              <!-- Modal content-->
+           <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">Launch modal</a>
+
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-full" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Thank you for submitting your information</h4>
-          </div>
-          <div class="modal-body">
-          {{!-- PRACTICE --}}
+            <div class="modal-header">
+                <h5 class="modal-title">Thank you for submitting your information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+       <div class="col-xs-12">
+            <div class="col-md-12" >
+               <h5 class="modal-title">Please enter the items that will be on display at your garage sale</h5>
+                <div id="field">
+                <div id="field0">
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-7 control-label" for="action_id">Item</label>  
+  <div class="col-md-5">
+  <input id="action_id" name="action_id" type="text" placeholder="" class="form-control input-md">
+    
+  </div>
+</div>
+<br><br>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="action_name">Item Price</label>  
+  <div class="col-md-5">
+  <input id="action_name" name="action_name" type="text" placeholder="" class="form-control input-md">
+    
+  </div>
+</div>
+<br><br>
+       <!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="action_json">Item Image</label>
+  <div class="col-md-4">
+              <input type="file" id="action_json" name="action_json" class="input-file" accept=".txt,.json">
+     <div id="action_jsondisplay"></div>
+  </div>
+</div>
 
-          <div class="panel panel-default">
-  <div class="panel-heading">Please enter the items you'd like to sell</div>
-  {{!-- <div class="panel-heading">Education Experience</div> --}}
-  <div class="panel-body">
-  
-  <div id="education_fields">
-          
+</div>
+</div>
+<!-- Button -->
+<div class="form-group">
+  <div class="col-md-4">
+    <button id="add-more" name="add-more" class="btn btn-primary">Add More</button>
+  </div>
+</div>
+<br><br>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+            </div>
         </div>
-       <div class="col-sm-3 nopadding">
-  <div class="form-group">
-    <input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="Item name">
-  </div>
-</div>
-<div class="col-sm-3 nopadding">
-  <div class="form-group">
-    <input type="text" class="form-control" id="Major" name="Major[]" value="" placeholder="Item price">
-     
-  </div>
-  <div class="input-group-btn">
-        <button class="btn btn-success" type="button"  onclick="education_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
-      </div>
-</div>
-
-
-<div class="clear"></div>
-  
-  </div>
-
-</div>
-
-          {{!-- PRACTICE --}}
-          
-          
-          
-          
-          
-          
-                    </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
- 
-      </div>
     </div>
-{{!-- MODAL --}}
+</div>
+
+                  {{!-- PRACTICE --}}
+
+
+
+
+
+                  {{!-- PRACTICE --}}
+
+          {{!-- MODAL --}}
         </form>
       </div>
       <script src="https://code.jquery.com/jquery.js"></script>
@@ -124,7 +136,7 @@
       <script>
         $("#submit-button").on("click", (event) => {
           event.preventDefault();
-alert("Adding New Seller")
+          alert("Adding New Seller")
           let newSeller = {
             name: $("#name").val().trim(),
             email: $("#email").val().trim(),
@@ -138,23 +150,34 @@ alert("Adding New Seller")
             });
         });
       </script>
+<script>
+$(document).ready(function () {
+   
+    var next = 0;
+    $("#add-more").click(function(e){
+        e.preventDefault();
+        var addto = "#field" + next;
+        var addRemove = "#field" + (next);
+        next = next + 1;
+        var newIn = ' <div id="field'+ next +'" name="field'+ next +'"><!-- Text input--><div class="form-group"> <label class="col-md-4 control-label" for="action_id">Item</label> <div class="col-md-5"> <input id="action_id" name="action_id" type="text" placeholder="" class="form-control input-md"> </div></div><br><br> <!-- Text input--><div class="form-group"> <label class="col-md-4 control-label" for="action_name">Item Price</label> <div class="col-md-5"> <input id="action_name" name="action_name" type="text" placeholder="" class="form-control input-md"> </div></div><br><br><!-- File Button --> <div class="form-group"> <label class="col-md-4 control-label" for="action_json">Item Image</label> <div class="col-md-4"> <input id="action_json" name="action_json" class="input-file" type="file"> </div></div></div>';
+        var newInput = $(newIn);
+        var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >Remove</button></div></div><div id="field">';
+        var removeButton = $(removeBtn);
+        $(addto).after(newInput);
+        $(addRemove).after(removeButton);
+        $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+        $("#count").val(next);  
+        
+            $('.remove-me').click(function(e){
+                e.preventDefault();
+                var fieldNum = this.id.charAt(this.id.length-1);
+                var fieldID = "#field" + fieldNum;
+                $(this).remove();
+                $(fieldID).remove();
+            });
+    });
 
-<script type="text/javascript">
-      var room = 1;
-function education_fields() {
- 
-    room++;
-    var objTo = document.getElementById('education_fields')
-    var divtest = document.createElement("div");
-	divtest.setAttribute("class", "form-group removeclass"+room);
-	var rdiv = 'removeclass'+room;
-    divtest.innerHTML = '<div class="col-sm-3 nopadding"><div class="form-group"> <input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" placeholder="Item name"></div></div><div class="col-sm-3 nopadding"><div class="form-group"> <input type="text" class="form-control" id="Major" name="Major[]" value="" placeholder="Item price"></div></div><div class="input-group-btn"> <button class="btn btn-danger" type="button" onclick="remove_education_fields('+ room +');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> </button></div></div></div></div><div class="clear"></div>';
-    
-    objTo.appendChild(divtest)
-}
-   function remove_education_fields(rid) {
-	   $('.removeclass'+rid).remove();
-   }
+});
 </script>
       <!-- /.col-md-8 -->
 
