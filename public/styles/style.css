@@ -213,6 +213,17 @@ button:focus {
   float: left;
 }
 
+.btnSubmit {
+
+  float: right;
+}
+
+.btnMore {
+
+  float: right;
+  margin-right: 20px;
+}
+
 .sellerItem {
   font-size: 2em;
   margin: 0;
@@ -2553,4 +2564,24 @@ h3 {
 /* LOGIN */
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
-/****** LOGIN MODAL ******/
+/* SELLER ITEM MODAL */
+.remove-me {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  
+bottom:0;
+  /* margin-top: 100%; */
+
+}
+
+.fa-arrow-down {
+  color: red;
+}
+
+.cancel {
+  color: red;
+}
