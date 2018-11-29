@@ -1,7 +1,8 @@
 require("dotenv").config();
+require('path');
 var express = require("express");
 var exphbs = require("express-handlebars");
-
+let helpers = require('handlebars-helpers')();
 var db = require("./models");
 
 var app = express();
@@ -17,7 +18,11 @@ app.engine(
   "handlebars",
 
   exphbs({ 
-    defaultLayout: "main"
+    defaultLayout: "main",
+    partialsDir  : [
+      //  path to your partials
+      __dirname + '/views/partials',
+  ]
   })
 );
 app.set("view engine", "handlebars");

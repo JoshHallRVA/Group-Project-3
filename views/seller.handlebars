@@ -67,7 +67,7 @@
       <script>
         $("#submit-button").on("click", (event) => {
           event.preventDefault();
-alert("Adding New Seller")
+          alert("Adding New Seller")
           let newSeller = {
             name: $("#name").val().trim(),
             email: $("#email").val().trim(),
@@ -81,6 +81,8 @@ alert("Adding New Seller")
             .then(function (data) {
               console.log("add.html", data);
             });
+
+
         });
       </script>
 

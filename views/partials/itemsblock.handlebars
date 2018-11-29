@@ -1,0 +1,11 @@
+<div class="whatever">
+  this is the itemsblock partial
+
+</div>
+
+<script>
+      $.get("/api/"+ id +"/items", function(data) {
+$('.whatever').append(data);
+      });
+
+</script>
