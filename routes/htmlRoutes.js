@@ -48,9 +48,11 @@ module.exports = function (app) {
 
   app.get("/:seller/items", function (req, res) {
     db.items.findAll({where: { id: req.params.seller }}).then(function (sellerItems) {
-      
+    db.items.countAll({where: {id:req.params.seller}}).then(function (sellerCount) { 
       res.render("items", {
-        items: sellerItems
+        items: sellerItems,
+        count: sellerCount,
+        });
       });
     });
   });
