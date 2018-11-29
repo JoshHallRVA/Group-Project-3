@@ -166,6 +166,8 @@ hr {
   padding: 12px 38px;
 }
 
+
+
 /*button size in extra small devices*/
 @media screen and (max-width: 767px) {
   .btn-lg {
@@ -196,15 +198,25 @@ hr {
 
 .btn.focus,
 .btn:focus,
-.btn:hover {
+.btn:hover,
+.btnSeller:hover {
   color: #fff;
 }
 .btn:focus,
+.btnSeller:focus,
 button:focus {
   outline: none !important;
 }
 
+.btnSeller {
+  margin-top: 25px;
+  float: left;
+}
 
+.sellerItem {
+  font-size: 2em;
+  margin: 0;
+}
 /*Download Button*/
 .btn-download {
   padding: 16px 38px;
