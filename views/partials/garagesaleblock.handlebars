@@ -1,11 +1,11 @@
-	<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
 
 {{!-- TODO: add city to the seller db --}}
 <div class="portfolio-item" data-groups='["all", "Overland Park, KS"]'>
 
   <div class="card">
     <div class="card-image waves-effect waves-block waves-light">
-      <img id="GS-image" class="activator"  alt="image">
+      <img id="GS-image" class="activator" alt="image">
     </div>
     <div class="card-content">
       <div class="counter-icon">{{sellerCount}}</div>
@@ -17,33 +17,19 @@
       <p><a href="#">Website</a></p>
       <p>{{message}}</p>
       <a href="#" class="readmore">View full project</a>
+      <div class="items-list">
+        <br>
+        <strong>Items for sale: </strong>
+        <br>
+        <ul>
+          {{#each items}}
+          <li>{{name}}</li>
+          {{/each}}
+        </ul>
+      </div>
 
-{{log sellers}}
 
 
-<script>
-
-</script>
     </div>
   </div><!-- /.card -->
 </div><!-- /.portfolio-item -->
-<script>
-
-  let images=[
-  "/assets/img/portfolio/portfolio-1.jpg",
-  "/assets/img/portfolio/portfolio-2.jpg",
-  "/assets/img/portfolio/portfolio-3.jpg",
-  "/assets/img/portfolio/portfolio-4.jpg",
-  "/assets/img/portfolio/portfolio-5.jpg",
-  "/assets/img/portfolio/portfolio-6.jpg",
-  "/assets/img/portfolio/portfolio-7.jpg",
-  "/assets/img/portfolio/portfolio-8.jpg",
-  "/assets/img/portfolio/portfolio-9.jpg",
-  "/assets/img/portfolio/portfolio-10.jpg",
-  "/assets/img/portfolio/portfolio-11.jpg",
-  "/assets/img/portfolio/portfolio-12.jpg",
-  ];
-let img;
-img=images[Math.floor(Math.random() * 10)]
-$('GS-image').attr('src',img);
-</script>

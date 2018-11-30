@@ -23,15 +23,14 @@ module.exports = function (app) {
     });
   });
 
-  // Create a new example
+//POST ROUTES
   app.post("/api/seller", function (req, res) {
     db.seller.create(req.body).then(function (dbSeller) {
       res.json(dbSeller);
     });
   });
-  app.post("/api/:seller/items", function (req, res) {
+  app.post("/api/seller/items", function (req, res) {
     let newItem = req.body;
-    newItem.sellerId = req.params.seller;
     db.items.create(newItem).then(function (dbItems) {
       res.json(dbItems);
     });

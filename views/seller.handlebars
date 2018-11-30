@@ -57,18 +57,126 @@
             <textarea name="message" id="message" class="materialize-textarea"></textarea>
             <label for="message">Message</label>
           </div>
+          {{!-- MODAL --}}
 
-          <button id="submit-button" name="submit" class="waves-effect waves-light btn pink left mt-30">Submit
-            Information</button>
+
+          <!-- Modal content-->
+          <a href="#myModal" role="button" id="submit-button" class="waves-effect pink darken-1 btn-large btnSeller"
+            data-toggle="modal">Submit
+            Garage Sale</a>
+
+          <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+            {{!-- <div class="modal-dialog modal-full" role="document"> --}}
+              {{!-- <div class="modal-content"> --}}
+
+                <div class="col-xs-12 modalSeller">
+                  <div class="col-md-12">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                    <h5 class="modal-title">Please enter the items that will be on display at your garage sale</h5>
+                    <div id="field">
+                      <div id="field0">
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-2 control-label sellerItem" for="action_name">Item</label>
+                          <div class="col-md-10">
+                            <input id="action_name" name="action_name" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+                        <br><br>
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-2 control-label sellerItem" for="action_price">Price</label>
+                          <div class="col-md-10">
+                            <input id="action_price" name="action_price" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+                        <br><br>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-2 control-label sellerItem" for="action_details">Details</label>
+                          <div class="col-md-10">
+                            <input id="action_details" name="action_details" type="text" placeholder="" class="form-control input-md">
+
+                          </div>
+                        </div>
+                        <br><br>
+                        <hr>
+                        <!-- File Button -->
+                        {{!-- <div class="form-group">
+                          <label class="col-md-4 control-label" for="action_json">Item Image</label>
+                          <div class="col-md-4">
+                            <input type="file" id="action_json" name="action_json" class="input-file" accept=".txt,.json">
+                            <div id="action_jsondisplay"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> --}}
+                    <!-- Button -->
+
+                    {{!-- <div class="modal-footer"> --}}
+                      {{!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Submit</button> --}}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <button type="button" class="waves-effect light-blue darken-3 btn-large btnSubmit" data-dismiss="modal"
+                      id="items-submit">Submit</button>
+                    <button id="add-more" name="add-more" class="waves-effect light-blue darken-3 btn-large btnMore">Add
+                      More</button>
+
+                  </div>
+                </div>
+
+
+                <br><br>
+              </div>
+
+              {{!-- PRACTICE --}}
+
+
+
+
+
+              {{!-- PRACTICE --}}
+
+              {{!-- MODAL --}}
         </form>
       </div>
       <script src="https://code.jquery.com/jquery.js"></script>
 
       <script>
+        $("#items-submit").on("click", (event) => {
+          event.preventDefault();
+          alert("Adding New Items")
+          let sellerId = $('#myModal').data("sellerId");
+          let newItem = {
+            name: $("#action_name").val().trim(),
+            price: $("#action_price").val().trim(),
+            details: $("#action_details").val().trim(),
+            sellerId: sellerId
+          };
+
+
+          $.post("/api/seller/items", newItem)
+            .then(function (data) {
+              console.log("add.html", data);
+            });
+
+
+        });
+      </script>
+      <script>
         $("#submit-button").on("click", (event) => {
           event.preventDefault();
           alert("Adding New Seller")
-          let newSeller = {
+          let newItem = {
             name: $("#name").val().trim(),
             email: $("#email").val().trim(),
             address: $("#address").val().trim(),
@@ -77,10 +185,12 @@
           };
 
 
-          $.post("/api/seller", newSeller)
+          $.post("/api/seller", newItem)
             .then(function (data) {
-              console.log("add.html", data);
+              console.log("new seller added: ", data);
+              $('#myModal').data("sellerId", data.id);
             });
+            
 
 
         });
