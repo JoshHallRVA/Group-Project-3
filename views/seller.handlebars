@@ -66,16 +66,14 @@
             Garage Sale</a>
 
           <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-full" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Thank you for submitting your information</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            {{!-- <div class="modal-dialog modal-full" role="document"> --}}
+              {{!-- <div class="modal-content"> --}}
+               
+                <div class="col-xs-12 modalSeller">
+                  <div class="col-md-12">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                   </button>
-                </div>
-                {{!-- <div class="col-xs-12"> --}}
-                  <div class="col-md-12">
                     <h5 class="modal-title">Please enter the items that will be on display at your garage sale</h5>
                     <div id="field">
                       <div id="field0">
@@ -116,7 +114,6 @@
                             <div id="action_jsondisplay"></div>
                           </div>
                         </div>
-
                       </div>
                     </div> --}}
                     <!-- Button -->
@@ -152,7 +149,7 @@
         </form>
       </div>
 <script src="https://code.jquery.com/jquery.js"></script>
-      
+
       <script>
         $("#submit-button").on("click", (event) => {
           event.preventDefault();
@@ -186,7 +183,6 @@
             $(addRemove).after(removeButton);
             $("#field" + next).attr('data-source', $(addto).attr('data-source'));
             $("#count").val(next);
-
             $('.remove-me').click(function (e) {
               e.preventDefault();
               var fieldNum = this.id.charAt(this.id.length - 1);

@@ -137,7 +137,8 @@ $("#submit-user").click(function (e) {
         $("#username").text(username);
         console.log(username);
         $("#ask-username").removeClass("is-active");
-
+$('#popUpWindow').modal('toggle'); //or  $('#IDModal').modal('hide');
+    return false;
         
 
     } else {
