@@ -44,7 +44,7 @@
 
           <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="/assets/img/portfolio/portfolio-2.jpg" alt="image">
+              <img class="activator" src="" alt="image">
             </div>
             <div class="card-content">
               <span class="card-title activator">Dustin's House <i class="fa fa-ellipsis-v right"></i> <i class="fa fa-heart-o right"></i></span>
@@ -64,7 +64,7 @@
 
           <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="/assets/img/portfolio/portfolio-3.jpg" alt="image">
+              <img class="activator" src="" alt="image">
             </div>
             <div class="card-content">
               <span class="card-title activator">Billy's House <i class="fa fa-ellipsis-v right"></i> <i class="fa fa-heart-o right"></i></span>
@@ -84,7 +84,7 @@
 
           <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="/assets/img/portfolio/portfolio-4.jpg" alt="image">
+              <img class="activator" src="" alt="image">
             </div>
             <div class="card-content">
               <span class="card-title activator">Josh's House <i class="fa fa-ellipsis-v right"></i> <i class="fa fa-heart-o right"></i></span>
@@ -104,7 +104,7 @@
 
           <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="/assets/img/portfolio/portfolio-5.jpg" alt="image">
+              <img class="activator" src="" alt="image">
             </div>
             <div class="card-content">
               <span class="card-title activator">Random Pirate Dude <i class="fa fa-ellipsis-v right"></i> <i class="fa fa-heart-o right"></i></span>
@@ -123,7 +123,7 @@
         <div class="portfolio-item" data-groups='["all", "Lees Summit, MO"]'>
           <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="/assets/img/portfolio/portfolio-6.jpg" alt="image">
+              <img class="activator" src="" alt="image">
             </div>
             <div class="card-content">
               <span class="card-title activator">Cool Pirate Dude<i class="fa fa-ellipsis-v right"></i> <i class="fa fa-heart-o right"></i></span>
@@ -232,5 +232,37 @@
   </div>
 </div>
 <!-- Modal: modalCart -->
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script>
+$(document).ready(function() {
+
+  var description = [
+    "assets/img/portfolio/portfolio-1.jpg",
+    "assets/img/portfolio/portfolio-2.jpg",
+    "assets/img/portfolio/portfolio-3.jpg",
+    "assets/img/portfolio/portfolio-4.jpg",
+    "assets/img/portfolio/portfolio-5.jpg",
+    "assets/img/portfolio/portfolio-6.jpg",
+    "assets/img/portfolio/portfolio-7.jpg",
+    "assets/img/portfolio/portfolio-8.jpg",
+    "assets/img/portfolio/portfolio-9.jpg",
+    "assets/img/portfolio/portfolio-10.jpg",
+    "assets/img/portfolio/portfolio-11.jpg",
+    "assets/img/portfolio/portfolio-12.jpg",
+  ];
+
+  var size = description.length
+  $('.card-image img').each(function() {
+  	var x = Math.floor(size * Math.random())
+    if ($(this).hasClass("activator")) {
+      $(this).attr("src", description[x]);
+    }
+  });
+
+}); 
+</script>
+
 
 {{> buyerfooter }}

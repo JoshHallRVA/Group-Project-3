@@ -61,7 +61,8 @@
 
 
           <!-- Modal content-->
-          <a href="#myModal" role="button" id="submit-button" class="waves-effect pink darken-1 btn-large btnSeller" data-toggle="modal">Submit
+          <a href="#myModal" role="button" id="submit-button" class="waves-effect pink darken-1 btn-large btnSeller"
+            data-toggle="modal">Submit
             Garage Sale</a>
 
           <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -119,23 +120,24 @@
                       </div>
                     </div> --}}
                     <!-- Button -->
-               
+
                     {{!-- <div class="modal-footer"> --}}
                       {{!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Submit</button> --}}
                     </div>
                   </div>
                 </div>
 
-                    <div class="form-group">
-                      <div class="col-md-12">
-                        <button type="button" class="waves-effect light-blue darken-3 btn-large btnSubmit" data-dismiss="modal">Submit</button>
-                        <button id="add-more" name="add-more" class="waves-effect light-blue darken-3 btn-large btnMore">Add More</button>
-                        
-                      </div>
-                    </div>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <button type="button" class="waves-effect light-blue darken-3 btn-large btnSubmit" data-dismiss="modal">Submit</button>
+                    <button id="add-more" name="add-more" class="waves-effect light-blue darken-3 btn-large btnMore">Add
+                      More</button>
 
-                     
-                    <br><br>
+                  </div>
+                </div>
+
+
+                <br><br>
               </div>
 
               {{!-- PRACTICE --}}
@@ -149,8 +151,8 @@
               {{!-- MODAL --}}
         </form>
       </div>
-      <script src="https://code.jquery.com/jquery.js"></script>
-
+<script src="https://code.jquery.com/jquery.js"></script>
+      
       <script>
         $("#submit-button").on("click", (event) => {
           event.preventDefault();
@@ -169,10 +171,10 @@
         });
       </script>
       <script>
-       $(document).ready(function () {
+        $(document).ready(function () {
           var next = 0;
           $("#add-more").click(function (e) {
-          e.preventDefault();
+            e.preventDefault();
             var addto = "#field" + next;
             var addRemove = "#field" + (next);
             next = next + 1;
@@ -194,8 +196,8 @@
               $(fieldID).remove();
             });
           });
-       });
-        
+        });
+
       </script>
       <!-- /.col-md-8 -->
 
