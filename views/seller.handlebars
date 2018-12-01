@@ -68,29 +68,30 @@
           <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
             {{!-- <div class="modal-dialog modal-full" role="document"> --}}
               {{!-- <div class="modal-content"> --}}
-               
+
                 <div class="col-xs-12 modalSeller">
                   <div class="col-md-12">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                  </button>
+                      <span aria-hidden="true">×</span>
+                    </button>
                     <h5 class="modal-title">Please enter the items that will be on display at your garage sale</h5>
+
                     <div id="field">
-                      <div id="field0">
+                      <div id="field0" class="item-input-area">
                         <!-- Text input-->
                         <div class="form-group">
-                          <label class="col-md-2 control-label sellerItem" for="action_name">Item</label>
+                          <label class="col-md-2 control-label sellerItem" for="action_name0">Item</label>
                           <div class="col-md-10">
-                            <input id="action_name" name="action_name" type="text" placeholder="" class="form-control input-md">
+                            <input id="action_name0" name="action_name0" type="text" placeholder="" class="form-control input-md">
 
                           </div>
                         </div>
                         <br><br>
                         <!-- Text input-->
                         <div class="form-group">
-                          <label class="col-md-2 control-label sellerItem" for="action_price">Price</label>
+                          <label class="col-md-2 control-label sellerItem" for="action_price0">Price</label>
                           <div class="col-md-10">
-                            <input id="action_price" name="action_price" type="text" placeholder="" class="form-control input-md">
+                            <input id="action_price0" name="action_price0" type="text" placeholder="" class="form-control input-md">
 
                           </div>
                         </div>
@@ -98,9 +99,9 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                          <label class="col-md-2 control-label sellerItem" for="action_details">Details</label>
+                          <label class="col-md-2 control-label sellerItem" for="action_details0">Details</label>
                           <div class="col-md-10">
-                            <input id="action_details" name="action_details" type="text" placeholder="" class="form-control input-md">
+                            <input id="action_details0" name="action_details0" type="text" placeholder="" class="form-control input-md">
 
                           </div>
                         </div>
@@ -147,48 +148,58 @@
               {{!-- MODAL --}}
         </form>
       </div>
-<script src="https://code.jquery.com/jquery.js"></script>
+      <script src="https://code.jquery.com/jquery.js"></script>
 
       <script>
-        $("#items-submit").on("click", (event) => {
-          event.preventDefault();
-          alert("Adding New Items")
-          let sellerId = $('#myModal').data("sellerId");
-          let newItem = {
-            name: $("#action_name").val().trim(),
-            price: $("#action_price").val().trim(),
-            details: $("#action_details").val().trim(),
-            sellerId: sellerId
-          };
+        $(document).ready(function () {
+
+          $("#items-submit").on("click", (event) => {
+            event.preventDefault();
+            alert("Adding New Items")
+            let sellerId = $('#myModal').data("sellerId");
+            let i = 0;
+            $('.item-input-area').each(function () {
+              let newItem = {
+                name: $("#action_name" + i).val().trim(),
+                price: $("#action_price" + i).val().trim(),
+                details: $("#action_details" + i).val().trim(),
+                sellerId: sellerId
+              };
 
 
-          $.post("/api/seller/items", newItem)
-            .then(function (data) {
-              console.log("add.html", data);
+              $.post("/api/seller/items", newItem)
+                .then(function (data) {
+                  console.log("add.html", data);
+                });
+
+              i++;
+
             });
-
-
+          });
         });
       </script>
       <script>
-        $("#submit-button").on("click", (event) => {
-          event.preventDefault();
-          alert("Adding New Seller")
-          let newSeller = {
-            name: $("#name").val().trim(),
-            email: $("#email").val().trim(),
-            address: $("#address").val().trim(),
-            dates: $("#dates").val().trim(),
-            message: $("#message").val().trim()
-          };
-          $.post("/api/seller", newSeller)
-            .then(function (data) {
-              console.log("new seller added: ", data);
-              $('#myModal').data("sellerId", data.id);
-            });
-            
+        $(document).ready(function () {
+
+          $("#submit-button").on("click", (event) => {
+            event.preventDefault();
+            alert("Adding New Seller")
+            let newSeller = {
+              name: $("#name").val().trim(),
+              email: $("#email").val().trim(),
+              address: $("#address").val().trim(),
+              dates: $("#dates").val().trim(),
+              message: $("#message").val().trim()
+            };
+            $.post("/api/seller", newSeller)
+              .then(function (data) {
+                console.log("new seller added: ", data);
+                $('#myModal').data("sellerId", data.id);
+              });
 
 
+
+          });
         });
       </script>
       <script>
@@ -196,12 +207,14 @@
           var next = 0;
           $("#add-more").click(function (e) {
             e.preventDefault();
+            console.log('still working')
             var addto = "#field" + next;
             var addRemove = "#field" + (next);
             next = next + 1;
-            var newIn = ' <div id="field' + next + '" name="field' + next + '"><!-- Text input--><div class="form-group"> <label class="col-md-2 control-label sellerItem" for="action_id">Item</label> <div class="col-md-10"> <input id="action_id" name="action_id" type="text" placeholder="" class="form-control input-md"> </div></div><br><br> <!-- Text input--><div class="form-group"> <label class="col-md-2 control-label sellerItem" for="action_name">Price</label> <div class="col-md-10"> <input id="action_name" name="action_name" type="text" placeholder="" class="form-control input-md"> </div></div><br><br><!-- Text input--><div class="form-group"> <label class="col-md-2 control-label sellerItem" for="action_id">Details</label> <div class="col-md-10"> <input id="action_id" name="action_id" type="text" placeholder="" class="form-control input-md"> </div></div><br><br>';
+            var newIn = ` <div class="item-input-area" id="field${next}" name="field${next}"><!-- Text input--><div class="form-group"> <label class="col-md-2 control-label sellerItem" for="action_name${next}">Item</label> <div class="col-md-10"> <input id="action_name${next}" name="action_name${next}" type="text" placeholder="" class="form-control input-md"> </div></div><br><br> <!-- Text input--><div class="form-group"> <label class="col-md-2 control-label sellerItem" for="action_price${next}">Price</label> <div class="col-md-10"> <input id="action_price${next}" name="action_price${next}" type="text" placeholder="" class="form-control input-md"> </div></div><br><br><!-- Text input--><div class="form-group"> <label class="col-md-2 control-label sellerItem" for="action_details${next}">Details</label> <div class="col-md-10"> <input id="action_details${next}" name="action_details${next}" type="text" placeholder="" class="form-control input-md"> </div></div><br><br>`;
             var newInput = $(newIn);
             var removeBtn = '<h5 class="modal-title cancel">Cancel</h5><button id="remove' + (next - 1) + '" class="remove-me" ><i class="fa fa-arrow-down fa-3x" aria-hidden="true"></i></button></div></div><div id="field">';
+
             var removeButton = $(removeBtn);
             $(addto).after(newInput);
             $(addRemove).after(removeButton);
