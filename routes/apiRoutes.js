@@ -2,7 +2,7 @@ let db = require("../models");
 
 module.exports = function (app) {
   // Get all examples
-  app.get("/api/:seller", function (req, res) {
+  app.get("/api/seller/:seller", function (req, res) {
     db.seller.findAll({ where: { id: req.params.seller } }).then(function (dbSeller) {
       res.json(dbSeller);
     });
@@ -17,9 +17,23 @@ module.exports = function (app) {
       res.json(dbAddress);
     });
   });
+
   app.get("/api/:buyer/booty", function (req, res) {
-    db.wishList.findAll({ where: { buyerId: req.params.buyer } }).then(function (dbBuyer) {
-      res.json(dbBuyer);
+    db.wishList.findAll({ 
+      where: { buyerId: req.params.buyer},
+      include: [{
+        model: db.items,
+        as: 'items',
+        required: false
+      }]
+     }).then(function (dbBuyer) {
+res.json(dbBuyer);
+    });
+  });
+  app.get("/api/buyermax", function (req, res) {
+    db.wishList.max('buyerId').then(function (buyerId) {
+      // let newBuyer = buyerId + 1;
+      res.json(buyerId);
     });
   });
 

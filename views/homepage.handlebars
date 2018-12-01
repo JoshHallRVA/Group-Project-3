@@ -140,3 +140,12 @@
 
 {{> team }}
 {{> footer }}
+
+<script>
+  let buyer = localStorage.getItem("buyer");
+  if (!buyer) {
+    $.get("/api/buyermax", function (data) {
+      localStorage.setItem("buyer", data)
+    });
+  }
+</script>
