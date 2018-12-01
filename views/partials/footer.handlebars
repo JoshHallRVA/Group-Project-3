@@ -109,7 +109,6 @@
                 levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50],
                 disable_onmobile: "on"
             },
-
         });
     });
 </script>
@@ -123,13 +122,11 @@
         e.preventDefault();
         $("#ask-username").removeClass("is-active");
     });
-
 </script>
 
 <script type="text/javascript">
 $("#submit-user").click(function (e) {
     e.preventDefault();
-
     if ($("#enter-username").val() !== "") {
         var username = "Welcome, "+ $("#enter-username").val().trim()
       
@@ -140,18 +137,13 @@ $("#submit-user").click(function (e) {
 $('#popUpWindow').modal('toggle'); //or  $('#IDModal').modal('hide');
     return false;
         
-
     } else {
         return false;
     }
-
 });
-
 $("#cancel-user").click(function () {
-
     $("#ask-username").removeClass("is-active");
 });
-
 $(".username-modal-close").on("click", function () {
     $("#alert-username").removeClass("is-active")
 });
@@ -169,6 +161,3 @@ $(".username-modal-close").on("click", function () {
 <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
 <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
 <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-
-{{!-- SNIP CART --}}
-{{!-- <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="NDFkMzAxZjItZDIwMS00ZTk5LThmZjEtNzliODNiZGQzNzRkNjM2Nzg2NzAyMTY5MDQ2ODAw"></script> --}}

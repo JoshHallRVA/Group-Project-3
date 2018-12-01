@@ -2591,3 +2591,10 @@ bottom:0;
 .modalSeller {
   background-color: white;
 }
+
+.login-header {
+  font-family: "Raleway", sans-serif !important;
+  font-size: 20px;
+  margin: 5px;
+  background-color: white;
+}
