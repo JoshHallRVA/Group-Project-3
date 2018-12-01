@@ -115,6 +115,7 @@
 {{!-- BULMA LOGIN --}}
    <script type="text/javascript">
     $(document).on("click", ".show-user-modal", function (e) {
+    
         e.preventDefault();
         $("#ask-username").addClass("is-active");
     });
@@ -126,12 +127,22 @@
 
 <script type="text/javascript">
 $("#submit-user").click(function (e) {
-    e.preventDefault();
+   e.preventDefault();
     if ($("#enter-username").val() !== "") {
         var username = "Welcome, "+ $("#enter-username").val().trim()
       
+      localStorage.clear();
+            // Store all content into localStorage
+      localStorage.setItem("user", username);
+      //$("#username").text(localStorage.getItem("user"));
+    if (localStorage.getItem("user")) {
+  //jQuery('#username').show(username);
+  $("#username").text(username);
+
+
+          };
      
-        $("#username").text(username);
+     //   $("#username").text(username);
         console.log(username);
         $("#ask-username").removeClass("is-active");
 $('#popUpWindow').modal('toggle'); //or  $('#IDModal').modal('hide');
@@ -147,6 +158,26 @@ $("#cancel-user").click(function () {
 $(".username-modal-close").on("click", function () {
     $("#alert-username").removeClass("is-active")
 });
+</script>
+
+<script type="text/javascript">
+/*window.onbeforeunload = function() {
+    localStorage.setItem(username, $('#username').val());
+
+} */
+  $( document ).ready(function()  {
+    var username =(localStorage.getItem("user"))
+if (username)
+    {$("#username").text(username);}
+    var name = localStorage.getItem(username);
+    if (name !== "") $('#username').val(username);
+    //alert(username);
+
+
+});
+
+
+
 </script>
 
 {{!-- MATERIALIZE MODAL --}}
