@@ -20,7 +20,7 @@ module.exports = function (app) {
 
   app.get("/api/:buyer/booty", function (req, res) {
     db.wishList.findAll({ 
-      where: { buyerId: req.params.buyer},
+      where: { id: req.params.buyer},
       include: [{
         model: db.items,
         as: 'items',

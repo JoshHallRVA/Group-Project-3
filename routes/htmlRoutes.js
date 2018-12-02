@@ -88,3 +88,77 @@ module.exports = function (app) {
     res.render("404");
   });
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let data = {
+  "id": 2,
+  "buyerName": "Mike",
+  "createdAt": null,
+  "updatedAt": null,
+  "items": [{
+    "id": 1,
+    "sellerId": 1,
+    "name": "Chair",
+    "details": null,
+    "price": "20",
+    "createdAt": null,
+    "updatedAt": null,
+    "wishListItem": {
+      "itemId": 1,
+      "wishListId": 2,
+      "createdAt": null,
+      "updatedAt": null
+    }
+  },
+  {
+    "id": 2,
+    "sellerId": 2,
+    "name": "Desk",
+    "details": null,
+    "price": "30",
+    "createdAt": null,
+    "updatedAt": null,
+    "wishListItem": {
+      "itemId": 2,
+      "wishListId": 2,
+      "createdAt": null,
+      "updatedAt": null
+    }
+  },
+  {
+    "id": 3,
+    "sellerId": 2,
+    "name": "Lawn Mower",
+    "details": null,
+    "price": "50",
+    "createdAt": null,
+    "updatedAt": null,
+    "wishListItem": {
+      "itemId": 3,
+      "wishListId": 2,
+      "createdAt": null,
+      "updatedAt": null
+    }
+  }]
+}
