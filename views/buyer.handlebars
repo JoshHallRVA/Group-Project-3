@@ -85,7 +85,9 @@
       <!--Footer-->
       <div class="modal-footer">
         <button type="button" class="waves-effect light-blue darken-3 btn-large btnMore" data-dismiss="modal">Close</button>
+
         <button class="waves-effect light-blue darken-3 btn-large btnMore">Set sail</button>
+
       </div>
     </div>
   </div>
@@ -94,7 +96,8 @@
 {{!-- Modal Script --}}
 <script src="https://code.jquery.com/jquery.js"></script>
 <script>
-  let buyer = localStorage.getItem("buyer");
+  let buyer = 2;
+      localStorage.setItem("buyer", 2);
   if (!buyer) {
     $.get("/api/buyermax", function (data) {
       localStorage.setItem("buyer", data)
