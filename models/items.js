@@ -6,7 +6,9 @@ module.exports = function (sequelize, DataTypes) {
     price: DataTypes.DECIMAL
   });
 
-  items.associate = function(models) {
+
+
+  items.associate = function (models) {
     // We're saying that a items should belong to an seller
     // A items can't be created without an seller due to the foreign key constraint
     items.belongsTo(models.seller, {
@@ -14,6 +16,9 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false
       }
     });
+    items.belongsToMany(models.wishList, {through: models.wishListItem    });
+
+
   };
 
 
