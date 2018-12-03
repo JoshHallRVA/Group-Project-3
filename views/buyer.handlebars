@@ -60,7 +60,7 @@
     <div class="modal-content">
       <!--Header-->
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Your cart</h4>
+        <h4 class="modal-title" id="myModalLabel">Your list</h4>
         <button id="cart-button" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
@@ -84,8 +84,8 @@
       </div>
       <!--Footer-->
       <div class="modal-footer">
-        <button type="button" class="waves-effect light-blue darken-3 btn-large btnMore"data-dismiss="modal">Close</button>
-        <button class="waves-effect light-blue darken-3 btn-large btnMore">Checkout</button>
+        <button type="button" class="waves-effect light-blue darken-3 btn-large btnMore" data-dismiss="modal">Close</button>
+        <button class="waves-effect light-blue darken-3 btn-large btnMore">Set sail</button>
       </div>
     </div>
   </div>
@@ -109,20 +109,20 @@
       e.preventDefault();
       buyer = localStorage.getItem("buyer");
       $.get("/api/" + buyer + "/booty", function (data) {
-        window.myObj=data;
+        window.myObj = data;
         let items = data[0].items;
         let itemCounter = 0;
         items.forEach(element => {
           itemCounter++;
-        let tableRow=`<tr>
+          let tableRow = `<tr>
               <th scope="row">${itemCounter}</th>
               <td>${element.name}</td>
               <td>$${element.price}</td>
               <td><a><i class="fa fa-remove"></i></a></td>
             </tr>`
-        $('#cart-items').append(tableRow);
-        console.log(data[0]);
-      });
+          $('#cart-items').append(tableRow);
+          console.log(data[0]);
+        });
 
       });
     });
@@ -135,71 +135,72 @@
 
 
 <script src="https://code.jquery.com/jquery.js"></script>
-{{!-- <script> 
-$(document).ready(function() {
+{{!--
+<script>
+  $(document).ready(function () {
 
-  var description = [
-    "assets/img/portfolio/portfolio-1.jpg",
-    "assets/img/portfolio/portfolio-2.jpg",
-    "assets/img/portfolio/portfolio-3.jpg",
-    "assets/img/portfolio/portfolio-4.jpg",
-    "assets/img/portfolio/portfolio-5.jpg",
-    "assets/img/portfolio/portfolio-6.jpg",
-    "assets/img/portfolio/portfolio-7.jpg",
-    "assets/img/portfolio/portfolio-8.jpg",
-    "assets/img/portfolio/portfolio-9.jpg",
-    "assets/img/portfolio/portfolio-10.jpg",
-    "assets/img/portfolio/portfolio-11.jpg",
-    "assets/img/portfolio/portfolio-12.jpg",
-  ];
+    var description = [
+      "assets/img/portfolio/portfolio-1.jpg",
+      "assets/img/portfolio/portfolio-2.jpg",
+      "assets/img/portfolio/portfolio-3.jpg",
+      "assets/img/portfolio/portfolio-4.jpg",
+      "assets/img/portfolio/portfolio-5.jpg",
+      "assets/img/portfolio/portfolio-6.jpg",
+      "assets/img/portfolio/portfolio-7.jpg",
+      "assets/img/portfolio/portfolio-8.jpg",
+      "assets/img/portfolio/portfolio-9.jpg",
+      "assets/img/portfolio/portfolio-10.jpg",
+      "assets/img/portfolio/portfolio-11.jpg",
+      "assets/img/portfolio/portfolio-12.jpg",
+    ];
 
-  var size = description.length
-  $('.card-image img').each(function() {
-  	var x = Math.floor(size * Math.random())
-    if ($(this).hasClass("activator")) {
-      $(this).attr("src", description[x]);
-    }
-  });
+    var size = description.length
+    $('.card-image img').each(function () {
+      var x = Math.floor(size * Math.random())
+      if ($(this).hasClass("activator")) {
+        $(this).attr("src", description[x]);
+      }
+    });
 
-}); 
+  }); 
 </script> --}}
 
 
-      <script src="https://code.jquery.com/jquery.js"></script>
-      <script>
-        $(document).ready(function () {
+<script src="https://code.jquery.com/jquery.js"></script>
+<script>
+  $(document).ready(function () {
 
-          var description = [
-            "assets/img/portfolio/portfolio-1.jpg",
-            "assets/img/portfolio/portfolio-2.jpg",
-            "assets/img/portfolio/portfolio-3.jpg",
-            "assets/img/portfolio/portfolio-4.jpg",
-            "assets/img/portfolio/portfolio-5.jpg",
-            "assets/img/portfolio/portfolio-6.jpg",
-            "assets/img/portfolio/portfolio-7.jpg",
-            "assets/img/portfolio/portfolio-8.jpg",
-            "assets/img/portfolio/portfolio-9.jpg",
-            "assets/img/portfolio/portfolio-10.jpg",
-            "assets/img/portfolio/portfolio-11.jpg",
-            "assets/img/portfolio/portfolio-12.jpg",
-          ];
+    var description = [
+      "assets/img/portfolio/portfolio-1.jpg",
+      "assets/img/portfolio/portfolio-2.jpg",
+      "assets/img/portfolio/portfolio-3.jpg",
+      "assets/img/portfolio/portfolio-4.jpg",
+      "assets/img/portfolio/portfolio-5.jpg",
+      "assets/img/portfolio/portfolio-6.jpg",
+      "assets/img/portfolio/portfolio-7.jpg",
+      "assets/img/portfolio/portfolio-8.jpg",
+      "assets/img/portfolio/portfolio-9.jpg",
+      "assets/img/portfolio/portfolio-10.jpg",
+      "assets/img/portfolio/portfolio-11.jpg",
+      "assets/img/portfolio/portfolio-12.jpg",
+    ];
 
-          $('activator').each(function () {
-            description.forEach(desc => {
-              if ($(this).attr('src')) {
-                console.log($(this).attr('src'));
-              }
-            });
-          })
+    $('activator').each(function () {
+      description.forEach(desc => {
+        if ($(this).attr('src')) {
+          console.log($(this).attr('src'));
+        }
+      });
+    })
 
-          var size = description.length
-          $('.card-image img').each(function () {
-            var x = Math.floor(size * Math.random())
-            if ($(this).hasClass("activator")) {
-              $(this).attr("src", description[x]);
-            }
-          });
+    var size = description.length
+    $('.card-image img').each(function () {
+      var x = Math.floor(size * Math.random())
+      if ($(this).hasClass("activator")) {
+        $(this).attr("src", description[x]);
+      }
+    });
 
-        }); 
-      </script>
+  }); 
+</script>
 {{> footer }}
