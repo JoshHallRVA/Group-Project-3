@@ -14,7 +14,7 @@ Authors: Michael Benefiel, Dustin Watkins, Billy Hodes, Josh Ragon
 
 <h2> About Garage Sailor</h2>
 Are you looking for a garage sale, or trying to promote your own? Well Garage Sailor is the app for you! Garage Sailor shows garage sales in your area with information about locations, items and prices. It is the perfect way to find that piece of furniture you've been looking for at a bargain price. Garage Sailor is easy to use: Just specify whether you are a buyer or seller and begin sailing! You can add items to your cart so you can keep track of which garage sales are on your radar.
-
+<hr></hr>
 <h2> Why use Garage Sailor? </h2>
 
 - Sellers can advertise their garage sale to a greater audience
