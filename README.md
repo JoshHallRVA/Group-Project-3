@@ -8,7 +8,7 @@ Authors: Michael Benefiel, Dustin Watkins, Billy Hodes, Josh Ragon
 
 <hr></hr>
 
-<h3> Full demo | Click below </h3>
+<h2> Full demo | Click below </h2>
 
 [![Garage Sailor](public/img/garage-sailor.jpg)](https://youtu.be/sVho6BaKim8)
 
@@ -76,7 +76,7 @@ Trello - Our team systematically set project goals, created and met deadlines, s
 
 - Welcome to Garage Sailor! Conveniently log in.
 
-![alt text](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/gif/step1.gif "Step #1")
+![alt text](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/public/img/step1.gif "Step #1")
 
 - Are you a buyer or a seller? Choose your destination. 
 
