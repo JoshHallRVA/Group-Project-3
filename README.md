@@ -38,59 +38,39 @@ Are you looking for a garage sale, or trying to promote your own? Well Garage Sa
 
 <h2>Technologies used</h2>
 
-[Bootstrap](http://getbootstrap.com/)
+HTML/CSS/Javascript - Garage Sailor was built using these core technologies. Both hand-crafted code and robust libraries were used to create the features necessary to give Garage Sailor a modern style, with an easy-to-use experience.  
 
-[Materialize](https://materializecss.com/)
+Bootstrap - The elegant style and feel of Garage Sailor incorporates several of the styling tools pioneered and perfected by Bootstrap 
 
-[Node.js](https://nodejs.org/en/)
+Materialize - Created and designed by Google, Material Design is a design language that combines the classic principles of successful design along with innovation and technology. 
 
-[Express](https://expressjs.com/)
+jQuery - Much of the smooth interactivity of Garage Sailor is put into motion with jQuery.  Moving information to and from relational databases is made much smoother with the use of jQuery.    
 
-[Handlebars](https://handlebarsjs.com/)
+AJAX - Piggybacking off of jQuery, AJAX is invaluable to communicating with the hand-tailored Garage Sailor API.
 
-[MySQL](https://www.mysql.com/)
+JSON - Communication between servers, relational databases, and front-end rendering relies heavily on the constructing and parsing of JSON objects.  
 
-[Sequelize](http://docs.sequelizejs.com/)
+Handlebars - Garage Sailor is held together by a Handlebars framework that was carefully crafted to suit the needs of an interactive experience necessary to make Garage Sailor a reality.
 
-[Heroku](https://heroku.com/)
+Heroku - Garage Sailor is now accessible from anywhere in the universe that has access to the world wide web thanks to the Heroku cloud platform and their willingness to aid developers by allowing for free and easy app deployment.
+
+JawsDb - All the data needed to deliver the experience to the Garage Sailor is housed inside of JawsDb.
+
+MySQL - All data creation and manipulation takes place using the MySQL dialect 
+
+Sequelize - Connections, data handling and delivery, and database management is handled using the Sequelize library. 
+
+Node - Servers were built on the Node.js platform. Using an open-source, cross-platform JavaScript run-time environment allowed us to customize many available libraries to suit Garage Sailor.
+
+Express - Express was chosen for it's fast, unopinionated, and minimalist qualities as our web framework for Garage Sailor.
+
+Git - As with all projects, Git remains invaluable to the creation, devlopment, communication, and support of Garage Sailor.
+
+Trello - Our team systematically set project goals, created and met deadlines, shared ideas, and coordinated efforts with the help of Trello.
+
 
 
 <hr></hr>
 
-<h4>Product Features</h4>
-
-- config
-    - connection.js
-        - establish database connection
-    - orm.js
-        - object for all of our SQL statement functions
-            - all selects all burgers from database
-            - create creates a new burger and inserts it into the database
-            - update updates a database change
-            - delete removes burger from database
-
-- controllers
-    - burger_controllers.js
-        - routing for our burger app
-            - get pulls all burgers from database and displays on screen
-            - post and create will post new burger on screen and in database      
-            - put and update will update database and move burger to devoured after button click
-            - delete will remove burger from screen and database
-
-    - db
-        - schema.sql
-        - seeds.sql
-      
-- models
-    - burger.js
-        - importing orm.js to create functions that will interact with database
-    
-    - public
-        - assets for images, css and simple js file
-        - app.get to pull survey page
-
-- views
-    - handlebars functionality
-
-- server.js
-    - configuration of server and application
+<h2>Product Features</h2>
+*step-by-step demo with GIFs going here
