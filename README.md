@@ -8,7 +8,7 @@ Authors: Michael Benefiel, Dustin Watkins, Billy Hodes, Josh Ragon
 
 <hr></hr>
 
-<h3> Click screenshot to view full demo </h3>
+<h3> Full demo | Click below </h3>
 
 [![Garage Sailor](public/img/garage-sailor.jpg)](https://youtu.be/sVho6BaKim8)
 
