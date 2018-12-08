@@ -70,9 +70,34 @@ Git - As with all projects, Git remains invaluable to the creation, devlopment, 
 
 Trello - Our team systematically set project goals, created and met deadlines, shared ideas, and coordinated efforts with the help of Trello.
 
-
-
 <hr></hr>
 
 <h2>Product Features</h2>
-*step-by-step demo with GIFs going here
+
+- Welcome to Garage Sailor! Conveniently log in.
+
+![alt text](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/gif/step1.gif "Step #1")
+
+- Are you a buyer or a seller? Choose your destination. 
+
+![alt text](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/gif/step2.gif "Step #2")
+
+- As a seller, start by entering your garage sale information and click "submit garage sale information". 
+
+![alt text](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/gif/step3.gif "Step #3")
+
+- Next, enter your item information. This has been pushed to the buyer page for others to view.
+
+![alt text](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/gif/step4.gif "Step #4")
+
+- Are you interested in visiting a garage sale, or purchasing items? Visit the buyer page!
+
+![alt text](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/gif/step5.gif "Step #5")
+
+- Select a garage sale near you to view more details. Like what you see? Add it to your boat for future sailing (to visit later).
+    - In future development, you will be able to 'set sail' and view the garage sale location on GoogleMaps. 
+
+![alt text](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/gif/step6.gif "Step #6")
+
+
+
