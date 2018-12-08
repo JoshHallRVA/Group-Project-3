@@ -40,35 +40,35 @@ Are you looking for a garage sale, or trying to promote your own? Well Garage Sa
 
 <h2>Technologies used</h2>
 
-HTML/CSS/Javascript - Garage Sailor was built using these core technologies. Both hand-crafted code and robust libraries were used to create the features necessary to give Garage Sailor a modern style, with an easy-to-use experience.  
+<strong>HTML/CSS/Javascript</strong> - Garage Sailor was built using these core technologies. Both hand-crafted code and robust libraries were used to create the features necessary to give Garage Sailor a modern style, with an easy-to-use experience.  
 
-Bootstrap - The elegant style and feel of Garage Sailor incorporates several of the styling tools pioneered and perfected by Bootstrap 
+<strong>Bootstrap</strong> - The elegant style and feel of Garage Sailor incorporates several of the styling tools pioneered and perfected by Bootstrap 
 
-Materialize - Created and designed by Google, Material Design is a design language that combines the classic principles of successful design along with innovation and technology. 
+<strong>Materialize</strong> - Created and designed by Google, Material Design is a design language that combines the classic principles of successful design along with innovation and technology. 
 
-jQuery - Much of the smooth interactivity of Garage Sailor is put into motion with jQuery.  Moving information to and from relational databases is made much smoother with the use of jQuery.    
+<strong>jQuery</strong> - Much of the smooth interactivity of Garage Sailor is put into motion with jQuery.  Moving information to and from relational databases is made much smoother with the use of jQuery.    
 
-AJAX - Piggybacking off of jQuery, AJAX is invaluable to communicating with the hand-tailored Garage Sailor API.
+<strong>AJAX</strong> - Piggybacking off of jQuery, AJAX is invaluable to communicating with the hand-tailored Garage Sailor API.
 
-JSON - Communication between servers, relational databases, and front-end rendering relies heavily on the constructing and parsing of JSON objects.  
+<strong>JSON</strong> - Communication between servers, relational databases, and front-end rendering relies heavily on the constructing and parsing of JSON objects.  
 
-Handlebars - Garage Sailor is held together by a Handlebars framework that was carefully crafted to suit the needs of an interactive experience necessary to make Garage Sailor a reality.
+<strong>Handlebar</strong> - Garage Sailor is held together by a Handlebars framework that was carefully crafted to suit the needs of an interactive experience necessary to make Garage Sailor a reality.
 
-Heroku - Garage Sailor is now accessible from anywhere in the universe that has access to the world wide web thanks to the Heroku cloud platform and their willingness to aid developers by allowing for free and easy app deployment.
+<strong>Heroku</strong> - Garage Sailor is now accessible from anywhere in the universe that has access to the world wide web thanks to the Heroku cloud platform and their willingness to aid developers by allowing for free and easy app deployment.
 
-JawsDb - All the data needed to deliver the experience to the Garage Sailor is housed inside of JawsDb.
+<strong>JawsDb</strong> - All the data needed to deliver the experience to the Garage Sailor is housed inside of JawsDb.
 
-MySQL - All data creation and manipulation takes place using the MySQL dialect 
+<strong>MySQL</strong> - All data creation and manipulation takes place using the MySQL dialect 
 
-Sequelize - Connections, data handling and delivery, and database management is handled using the Sequelize library. 
+<strong>Sequelize</strong> - Connections, data handling and delivery, and database management is handled using the Sequelize library. 
 
-Node - Servers were built on the Node.js platform. Using an open-source, cross-platform JavaScript run-time environment allowed us to customize many available libraries to suit Garage Sailor.
+<strong>Node</strong> - Servers were built on the Node.js platform. Using an open-source, cross-platform JavaScript run-time environment allowed us to customize many available libraries to suit Garage Sailor.
 
-Express - Express was chosen for it's fast, unopinionated, and minimalist qualities as our web framework for Garage Sailor.
+<strong>Express</strong> - Express was chosen for its fast, unopinionated, and minimalist qualities as our web framework for Garage Sailor.
 
-Git - As with all projects, Git remains invaluable to the creation, devlopment, communication, and support of Garage Sailor.
+<strong>Git</strong> - As with all projects, Git remains invaluable to the creation, development, communication, and support of Garage Sailor.
 
-Trello - Our team systematically set project goals, created and met deadlines, shared ideas, and coordinated efforts with the help of Trello.
+<strong>Trello</strong> - Our team systematically set project goals, created and met deadlines, shared ideas, and coordinated efforts with the help of Trello.
 
 <hr></hr>
 
@@ -100,4 +100,13 @@ Trello - Our team systematically set project goals, created and met deadlines, s
 ![Step #6](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/public/img/step1.gif "Step #6")
 
 
+<h2> Authors </h2>
+
+[Michael Benefiel](https://github.com/mjbenefiel)
+
+[Billy Hodes](https://github.com/bhodes)
+
+[Josh Ragon](https://github.com/jlrt37)
+
+[Dustin Watkins](https://github.com/watkins656)
 
