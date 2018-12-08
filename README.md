@@ -24,7 +24,7 @@ Are you looking for a garage sale, or trying to promote your own? Well Garage Sa
 - Buyers can see items at a garage sale without leaving home
 
 - Keep track of the items you want and where they are
-
+<hr></hr>
 <h2> Future development </h2>
 
 - Garage "Sailors" are the future. 
