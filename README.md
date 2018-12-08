@@ -3,7 +3,9 @@
 Live version: https://garage-sailor.herokuapp.com/
 <hr></hr>
 
-Authors: Michael Benefiel, Dustin Watkins, Billy Hodes, Josh Ragon
+<h2> Authors </h2>
+
+[Michael Benefiel](https://github.com/mjbenefiel) || [Billy Hodes](https://github.com/bhodes) || [Josh Ragon](https://github.com/jlrt37) || [Dustin Watkins](https://github.com/watkins656)
 
 
 <hr></hr>
@@ -100,13 +102,5 @@ Are you looking for a garage sale, or trying to promote your own? Well Garage Sa
 ![Step #6](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/public/img/step1.gif "Step #6")
 
 
-<h2> Authors </h2>
 
-[Michael Benefiel](https://github.com/mjbenefiel)
-
-[Billy Hodes](https://github.com/bhodes)
-
-[Josh Ragon](https://github.com/jlrt37)
-
-[Dustin Watkins](https://github.com/watkins656)
 
