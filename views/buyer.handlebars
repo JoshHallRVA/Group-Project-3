@@ -60,7 +60,7 @@
     <div class="modal-content">
       <!--Header-->
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Your cart</h4>
+        <h4 class="modal-title" id="myModalLabel">Your list</h4>
         <button id="cart-button" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
@@ -85,7 +85,9 @@
       <!--Footer-->
       <div class="modal-footer">
         <button type="button" class="waves-effect light-blue darken-3 btn-large btnMore" data-dismiss="modal">Close</button>
-        <button class="waves-effect light-blue darken-3 btn-large btnMore">Checkout</button>
+        
+        <button class="waves-effect light-blue darken-3 btn-large btnMore">Set Sail</button>
+
       </div>
     </div>
   </div>
@@ -95,19 +97,17 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <script>
   let buyer = 2;
-      localStorage.setItem("buyer", 2);
+  localStorage.setItem("buyer", 2);
   if (!buyer) {
     $.get("/api/buyermax", function (data) {
       localStorage.setItem("buyer", data)
     });
   }
-
-
   $(document).ready(function () {
-
     $('#cart-button').on('click', function (e) {
       console.log("buyer: ")
       e.preventDefault();
+      $("#cart-items").empty();
       buyer = localStorage.getItem("buyer");
       $.get("/api/" + buyer + "/booty", function (data) {
         window.myObj = data;
@@ -171,6 +171,7 @@
 <script>
   $(document).ready(function () {
 
+
     var description = [
       "assets/img/portfolio/portfolio-1.jpg",
       "assets/img/portfolio/portfolio-2.jpg",
@@ -201,6 +202,35 @@
         $(this).attr("src", description[x]);
       }
     });
+
+    $('#add-to-cart').on('click', function (e) {
+      e.preventDefault();
+let tableRow = `<tr>
+              <th scope="row">${itemCounter}</th>
+              <td>${element.name}</td>
+              <td>$${element.price}</td>
+              <td><a><i class="fa fa-remove"></i></a></td>
+            </tr>`
+          $('#cart-items').append(tableRow);
+
+
+
+
+
+
+
+      let buyer = localStorage.getItem('buyer');
+      let items = $(this).attr('items');
+      alert(items)
+      console.log(items)
+      items.forEach(element => {
+        $.post("/api/" + buyer + "/booty", element).then(function (data) {
+          console.log(data);
+        });
+
+      });
+
+    })
 
   }); 
 </script>

@@ -58,8 +58,9 @@ res.json(dbBuyer);
   });
   app.post("/api/:buyer/booty", function (req, res) {
     let newItem = req.body;
-    newItem.buyerId = req.params.buyer;
-    db.wishList.create(newItem).then(function (dbBuyer) {
+    newItem.wishListId = req.params.buyer;
+    newItem.itemId = req.body.itemId;
+    db.wishListItems.create(newItem).then(function (dbBuyer) {
       res.json(dbBuyer);
     });
   });

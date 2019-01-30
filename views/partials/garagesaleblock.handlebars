@@ -9,7 +9,8 @@
     </div>
     <div class="card-content">
       <div class="counter-icon">{{sellerCount}}</div>
-      <span class="card-title activator">{{name}} <img src="/img/map.png" alt="Map" height="20px" width="20px"></span>
+      <span class="card-title activator">{{name}}
+        <img id="add-to-cart" src="/img/map.png" alt="Map" height="20px" width="20px"></span>
       <p><a href="#">Location: {{address}}</a></p>
     </div>
     <div class="card-reveal">
@@ -23,7 +24,7 @@
         <br>
         <ul>
           {{#each items}}
-          <li>{{name}}</li>
+          <li class="items-for-sale">{{name}}</li>
           {{/each}}
         </ul>
       </div>
